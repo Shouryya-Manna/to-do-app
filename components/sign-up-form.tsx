@@ -28,7 +28,7 @@ export function SignUpForm() {
   }
 
   return (
-    <Card className="w-full shadow-none border-0 outline-none">
+    <Card className="w-full h-full flex flex-col justify-center shadow-none border-0 outline-none">
       <CardHeader>
         <CardTitle className="text-center text-xl sm:text-left">
           Create your account

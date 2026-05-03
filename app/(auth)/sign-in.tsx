@@ -5,16 +5,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SignInScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerClassName="flex-grow justify-center items-center"
-        keyboardDismissMode="interactive"
-      >
-        <View className="w-full">
-          <SignInForm />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      contentContainerClassName="w-full h-full flex-grow justify-center items-center"
+      keyboardDismissMode="interactive"
+    >
+      <View className="w-full h-full">
+        <SignInForm />
+      </View>
+    </ScrollView>
   );
 }

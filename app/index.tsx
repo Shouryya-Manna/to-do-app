@@ -25,7 +25,7 @@ export default function Index() {
           <Button
             variant={"default"}
             size={"sm"}
-            className="w-11/12 mt-8"
+            className="w-11/12 mt-8 bg-black"
             onPress={() => router.push("/sign-up")}
           >
             <Text className="text-white">Sign up</Text>

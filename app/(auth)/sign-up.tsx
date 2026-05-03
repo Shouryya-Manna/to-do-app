@@ -6,17 +6,15 @@ import { SignUpForm } from "@/components/sign-up-form";
 
 const SignUp = () => {
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerClassName="flex-grow items-center justify-center"
-        keyboardDismissMode="interactive"
-      >
-        <View className="w-full">
-          <SignUpForm />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      contentContainerClassName="flex-grow items-center justify-center"
+      keyboardDismissMode="interactive"
+    >
+      <View className="w-full h-full">
+        <SignUpForm />
+      </View>
+    </ScrollView>
   );
 };
 

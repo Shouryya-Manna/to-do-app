@@ -29,7 +29,7 @@ export function SignInForm() {
 
   return (
 
-      <Card className="w-full rounded-none border-0 shadow-none">
+      <Card className="w-full h-full flex flex-col justify-center rounded-none border-0 shadow-none">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-left">
             Sign in to your app
