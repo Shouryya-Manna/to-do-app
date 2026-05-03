@@ -10,12 +10,13 @@ const Layout = () => {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.primary[500],
-        tabBarInactiveTintColor: Colors.dark.surface,
+        tabBarActiveTintColor: Colors.primary[400],
+        tabBarInactiveTintColor: Colors.dark.muted,
         tabBarStyle: {
           backgroundColor: Colors.secondary[100],
           borderTopColor: Colors.light.border,
           paddingBottom: 14,
+          paddingTop: 10,
           height: 75,
         },
         tabBarLabelStyle: {
@@ -29,21 +30,27 @@ const Layout = () => {
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: () => <Ionicons name="home" size={24} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="home" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="tasks"
         options={{
           title: "Tasks",
-          tabBarIcon: () => <Ionicons name="list-outline" size={24} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="list-outline" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: () => <Ionicons name="person" size={24} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person" size={24} color={color} />
+          ),
         }}
       />
     </Tabs>
