@@ -11,12 +11,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Text } from "@/components/ui/text";
-import { Colors } from "@/constants/Theme";
 import { useRouter } from "expo-router";
 import * as React from "react";
-import { Pressable, TextInput, View } from "react-native";
+import { Pressable, type TextInput, View } from "react-native";
 
-export function SignUpForm() {
+export function SignInForm() {
   const router = useRouter();
   const passwordInputRef = React.useRef<TextInput>(null);
 
@@ -30,16 +29,13 @@ export function SignUpForm() {
 
   return (
     <View className="flex-1">
-      <Card
-        className="flex-1 rounded-none border-0 shadow-none bg-none"
-        // style={{ backgroundColor: Colors.light.secondary }}
-      >
+      <Card className="flex-1 rounded-none border-0 shadow-none">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-left">
-            Create your account
+            Sign in to your app
           </CardTitle>
           <CardDescription className="text-center sm:text-left">
-            Welcome! Please fill in the details to get started.
+            Welcome back! Please sign in to continue
           </CardDescription>
         </CardHeader>
         <CardContent className="gap-6">
@@ -60,6 +56,18 @@ export function SignUpForm() {
             <View className="gap-1.5">
               <View className="flex-row items-center">
                 <Label htmlFor="password">Password</Label>
+                <Button
+                  variant="link"
+                  size="sm"
+                  className="web:h-fit ml-auto h-4 px-1 py-0 sm:h-4"
+                  onPress={() => {
+                    // TODO: Navigate to forgot password screen
+                  }}
+                >
+                  <Text className="font-normal leading-4">
+                    Forgot your password?
+                  </Text>
+                </Button>
               </View>
               <Input
                 ref={passwordInputRef}
@@ -74,14 +82,14 @@ export function SignUpForm() {
             </Button>
           </View>
           <Text className="text-center text-sm">
-            Already have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Pressable
               onPress={() => {
-                router.push("/sign-in");
+                router.push("/sign-up");
               }}
             >
               <Text className="text-sm underline underline-offset-4">
-                Sign in
+                Sign up
               </Text>
             </Pressable>
           </Text>

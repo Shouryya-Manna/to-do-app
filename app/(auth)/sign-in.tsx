@@ -1,11 +1,10 @@
+import { SignInForm } from "@/components/sign-in-form";
+import { Colors } from "@/constants/Theme";
 import React from "react";
 import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { SignUpForm } from "@/components/sign-up-form";
-import { Colors } from "@/constants/Theme";
-
-const SignUp = () => {
+export default function SignInScreen() {
   return (
     <SafeAreaView
       style={{
@@ -19,11 +18,9 @@ const SignUp = () => {
         keyboardDismissMode="interactive"
       >
         <View className="flex-1">
-          <SignUpForm />
+          <SignInForm />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
-};
-
-export default SignUp;
+}
