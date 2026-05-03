@@ -28,8 +28,8 @@ export function SignInForm() {
   }
 
   return (
-    <View className="flex-1">
-      <Card className="flex-1 rounded-none border-0 shadow-none">
+
+      <Card className="w-full rounded-none border-0 shadow-none">
         <CardHeader>
           <CardTitle className="text-center text-xl sm:text-left">
             Sign in to your app
@@ -101,6 +101,6 @@ export function SignInForm() {
           <SocialConnections />
         </CardContent>
       </Card>
-    </View>
+
   );
 }

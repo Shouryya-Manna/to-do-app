@@ -15,14 +15,13 @@ const Layout = () => {
         tabBarStyle: {
           backgroundColor: Colors.secondary[100],
           borderTopColor: Colors.light.border,
-          paddingBottom: 14,
-          paddingTop: 10,
+          paddingBottom: 5,
+          paddingTop: 5,
           height: 75,
         },
         tabBarLabelStyle: {
           fontSize: 13,
-          fontFamily: "Inter-Medium",
-          fontWeight: "700",
+          fontWeight: "500",
         },
       }}
     >
