@@ -25,7 +25,7 @@ export default function Index() {
           <Button
             variant={"default"}
             size={"sm"}
-            className="w-11/12 mt-8"
+            className="w-11/12 mt-8 bg-black"
             onPress={() => router.push("/sign-up")}
           >
             <Text className="text-white">Sign up</Text>
@@ -39,7 +39,7 @@ export default function Index() {
             <Text className="">Guest User</Text>
           </Button>
           <View className="flex-row items-center w-full my-4">
-            <View className="flex-1 border border-muted-foreground rounded-full mx-4" />{" "}
+            <View className="flex-1 border border-muted-foreground rounded-full mx-4" />
             <Text className="mx-1">Or</Text>
             <View className="flex-1 border border-muted-foreground rounded-full mx-4" />
           </View>
@@ -47,7 +47,7 @@ export default function Index() {
           <View className="flex-row items-center">
             <Text className="mr-3 ">Already a user?</Text>
             <Link href={"/sign-in"} className="underline font-medium">
-              Sign in
+              <Text>Sign in</Text>
             </Link>
           </View>
         </View>
