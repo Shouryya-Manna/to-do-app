@@ -2,6 +2,7 @@ import { Colors } from "@/constants/Theme";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import React from "react";
+import { View } from "react-native";
 
 <MaterialIcons name="menu" size={28} color="blue" />;
 
@@ -10,11 +11,11 @@ const Layout = () => {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.primary[400],
-        tabBarInactiveTintColor: Colors.dark.muted,
+        // tabBarActiveTintColor: Colors.primary[400],
+        // tabBarInactiveTintColor: Colors.dark.muted,
         tabBarStyle: {
-          backgroundColor: Colors.secondary[100],
-          borderTopColor: Colors.light.border,
+          // backgroundColor: Colors.secondary[100],
+          // borderTopColor: Colors.light.border,
           paddingBottom: 5,
           paddingTop: 5,
           height: 75,
