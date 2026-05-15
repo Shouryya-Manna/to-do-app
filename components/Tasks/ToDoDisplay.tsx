@@ -3,6 +3,7 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { Checkbox } from "../ui/checkbox";
 import { Ionicons } from "@expo/vector-icons";
+import { cn } from "@/lib/utils";
 
 interface ToDoDisplayProps {
   item: ToDo;
@@ -26,7 +27,9 @@ function ToDoDisplay({
             checked={item.completed}
             onCheckedChange={() => handleToDoCheck(item.id)}
           />
-          <Text className="text-sm pl-2">
+          <Text
+            className={cn("text-sm pl-2", item.completed && "line-through")}
+          >
             {item.text.length > 24 ? item.text.slice(0, 25) + "..." : item.text}
           </Text>
         </View>

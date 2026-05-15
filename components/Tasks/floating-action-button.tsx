@@ -8,9 +8,15 @@ import Animated, {
   withSpring,
   withTiming,
 } from "react-native-reanimated";
-import { Textarea } from "./ui/textarea";
+import { Textarea } from "../ui/textarea";
 
-export default function AnimatedFAB() {
+interface FloatingActionButtonProps {
+  handleToDoCreate: (text: string) => void;
+}
+
+export default function FloatingActionButton({
+  handleToDoCreate,
+}: FloatingActionButtonProps) {
   const [expanded, setExpanded] = useState(false);
   const [task, setTask] = useState("");
 
@@ -38,6 +44,10 @@ export default function AnimatedFAB() {
     setTimeout(() => {
       setExpanded(false);
     }, 200);
+  }
+
+  function handleInput(text: string) {
+    setTask(text);
   }
 
   const containerStyle = useAnimatedStyle(() => {
@@ -95,7 +105,7 @@ export default function AnimatedFAB() {
           >
             <Textarea
               value={task}
-              onChangeText={setTask}
+              onChangeText={(text) => handleInput(text)}
               keyboardType={"default"}
               placeholder="Enter task..."
               style={
@@ -120,10 +130,11 @@ export default function AnimatedFAB() {
             <Pressable
               onPress={() => {
                 console.log(task);
+                handleToDoCreate(task)
                 setTask("");
                 handleClose();
               }}
-              className="pb-4"
+              className="pb-5 pr-1.5"
             >
               <Ionicons name="send" color={"white"} size={18} />
             </Pressable>

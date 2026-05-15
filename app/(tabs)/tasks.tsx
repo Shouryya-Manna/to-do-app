@@ -1,9 +1,7 @@
-import FloatingActionButton from "@/components/floating-action-button";
+import FloatingActionButton from "@/components/Tasks/floating-action-button";
 import ToDoDisplay from "@/components/Tasks/ToDoDisplay";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TODO_DATA, ToDoData } from "@/data/mock-todo-data";
-import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
   FlatList,
@@ -21,8 +19,8 @@ function Tasks() {
    */
   const [data, setData] = useState<ToDoData>(TODO_DATA);
   const [input, setInput] = useState("");
-  const filteredTodos = data.filter((data) =>
-    data.text.toLowerCase().includes(input),
+  const filteredTodos = data.filter((task) =>
+    task.text.toLowerCase().includes(input.toLowerCase().trim()),
   );
 
   /**
@@ -31,8 +29,8 @@ function Tasks() {
    * =======================================================
    */
 
-  function handleInput(e: TextInputChangeEvent) {
-    setInput(e.nativeEvent.text);
+  function handleInput(text: string) {
+    setInput(text);
   }
 
   function handleToDoCheck(id: string) {
@@ -45,6 +43,13 @@ function Tasks() {
 
   function handleToDoDelete(id: string) {
     setData((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  }
+
+  function handleToDoCreate(text: string) {
+    setData((prev) => {
+      const newId = (prev.length + 1).toString();
+      return [...prev, { id: newId, text, completed: false }];
+    });
   }
 
   return (
@@ -61,7 +66,7 @@ function Tasks() {
               keyboardType={"default"}
               placeholder="Search..."
               className="w-full"
-              onChange={(e) => handleInput(e)}
+              onChangeText={(text) => handleInput(text)}
             />
           </View>
 
@@ -124,7 +129,7 @@ function Tasks() {
       </ScrollView>
 
       {/* Add Task Button */}
-      <FloatingActionButton />
+      <FloatingActionButton handleToDoCreate={handleToDoCreate} />
     </View>
   );
 }
