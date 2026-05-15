@@ -15,7 +15,6 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        // backgroundColor: Colors.light.secondary,
       }}
     >
       <ScrollView contentContainerStyle={{ height: "100%" }}>
