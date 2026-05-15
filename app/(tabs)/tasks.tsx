@@ -3,13 +3,7 @@ import ToDoDisplay from "@/components/Tasks/ToDoDisplay";
 import { Input } from "@/components/ui/input";
 import { TODO_DATA, ToDoData } from "@/data/mock-todo-data";
 import React, { useState } from "react";
-import {
-  FlatList,
-  ScrollView,
-  Text,
-  TextInputChangeEvent,
-  View,
-} from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 
 function Tasks() {
   /**
