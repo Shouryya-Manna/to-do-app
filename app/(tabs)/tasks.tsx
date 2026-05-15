@@ -1,3 +1,4 @@
+import FloatingActionButton from "@/components/floating-action-button";
 import ToDoDisplay from "@/components/Tasks/ToDoDisplay";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -123,11 +124,7 @@ function Tasks() {
       </ScrollView>
 
       {/* Add Task Button */}
-      <View className="absolute bottom-2 right-9">
-        <Button className="size-12 bg-black ">
-          <Ionicons name="add" size={28} color={"white"} />
-        </Button>
-      </View>
+      <FloatingActionButton />
     </View>
   );
 }

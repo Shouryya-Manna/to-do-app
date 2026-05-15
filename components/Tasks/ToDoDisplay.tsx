@@ -17,7 +17,6 @@ function ToDoDisplay({
   return (
     <Pressable
       key={item.id}
-      onPress={() => handleToDoCheck(item.id)}
       className="border border-muted-foreground/20 selected:border-muted-foreground/50 selected:bg-gray-300 transition-all duration-300 rounded-md h-10 flex  justify-center mb-2 bg-white"
     >
       <View className="flex flex-row items-center  w-full justify-between">
@@ -27,7 +26,9 @@ function ToDoDisplay({
             checked={item.completed}
             onCheckedChange={() => handleToDoCheck(item.id)}
           />
-          <Text className="text-sm pl-2">{item.text}</Text>
+          <Text className="text-sm pl-2">
+            {item.text.length > 24 ? item.text.slice(0, 25) + "..." : item.text}
+          </Text>
         </View>
         <Pressable className="pr-3" onPress={() => handleToDoDelete(item.id)}>
           <Ionicons name="trash" size={20} className="text-red-600" />
