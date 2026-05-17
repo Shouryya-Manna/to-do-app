@@ -1,13 +1,13 @@
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { TODO_DATA } from "@/data/mock-todo-data";
 import React from "react";
-import { FlatList, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
 const Home = () => {
   const user = "User";
   const upcomingData = [TODO_DATA[0], TODO_DATA[1], TODO_DATA[2]];
   return (
-    <ScrollView className="" contentContainerClassName="">
+    <ScrollView className="flex-1" contentContainerClassName="">
       <View className="flex justify-center items-center">
         <View className="w-3/4 flex flex-col mt-20">
           <Text className="font-semibold text-3xl">Good Morning,</Text>
@@ -18,22 +18,20 @@ const Home = () => {
             Your upcoming tasks are -
           </Text>
 
-          <FlatList
-            className="w-full"
-            data={upcomingData}
-            renderItem={({ item }) => {
-              return (
-                <Card className="mt-2 w-full px-6">
-                  <View className="flex-row gap-2">
-                    <Text className="text-4xl font-semibold">{item.id + "."}</Text>
-                    <View className="flex-1 justify-end ml-2">
-                      <Text className="text-base text-gray-400">{item.text}</Text>
-                    </View>
+          {upcomingData.map((item) => {
+            return (
+              <Card className="mt-2 w-full px-6" key={item.id}>
+                <View className="flex-row gap-2">
+                  <Text className="text-4xl font-semibold">
+                    {item.id + "."}
+                  </Text>
+                  <View className="flex-1 justify-end ml-2">
+                    <Text className="text-base text-gray-400">{item.text}</Text>
                   </View>
-                </Card>
-              );
-            }}
-          />
+                </View>
+              </Card>
+            );
+          })}
         </View>
       </View>
     </ScrollView>

@@ -6,14 +6,15 @@ import { cn } from "@/lib/utils";
 interface InfoGraphicsProps {
   iconName: keyof typeof Ionicons.glyphMap;
   text: string;
-  iconClassName?: string;
+  color?: string;
+  className?: string;
 }
 
-function InfoGraphics({ iconName, text, iconClassName }: InfoGraphicsProps) {
+function InfoGraphics({ iconName, text, color, className }: InfoGraphicsProps) {
   return (
-    <View className="border border-gray-300 rounded-lg p-3">
+    <View className={cn("border border-gray-300 rounded-lg p-3", className)}>
       <View className="flex items-center justify-center">
-        <Ionicons name={iconName} size={26} className={cn("", iconClassName)} />
+        <Ionicons name={iconName} size={26} color={color} />
 
         <Text className="text-xs font-medium">{text}</Text>
       </View>
