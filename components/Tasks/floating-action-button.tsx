@@ -90,7 +90,7 @@ export default function FloatingActionButton({
             alignItems: "center",
           }}
         >
-          <Ionicons name="add" size={20} className="text-gray-200" />
+          <Ionicons name="add" size={20} color={"white"} />
         </Pressable>
       ) : (
         <>
@@ -130,7 +130,7 @@ export default function FloatingActionButton({
             <Pressable
               onPress={() => {
                 console.log(task);
-                handleToDoCreate(task)
+                handleToDoCreate(task);
                 setTask("");
                 handleClose();
               }}

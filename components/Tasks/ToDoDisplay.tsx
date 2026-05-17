@@ -34,7 +34,7 @@ function ToDoDisplay({
           </Text>
         </View>
         <Pressable className="pr-3" onPress={() => handleToDoDelete(item.id)}>
-          <Ionicons name="trash" size={20} className="text-red-600" />
+          <Ionicons name="trash" size={20} color={"#dc2626"} />
         </Pressable>
       </View>
     </Pressable>

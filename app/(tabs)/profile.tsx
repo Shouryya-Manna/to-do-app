@@ -28,17 +28,20 @@ const Profile = () => {
             <InfoGraphics
               iconName="checkmark"
               text="Consistent"
-              iconClassName="text-blue-600"
+              color="blue"
+              className="border-blue-600"
             />
             <InfoGraphics
               iconName="star"
               text="Rookie"
-              iconClassName="text-yellow-700"
+              color="#EFBF04"
+              className="border-[#EFBF04]"
             />
             <InfoGraphics
               iconName="calendar-outline"
               text="Daily"
-              iconClassName="text-green-600"
+              color="green"
+              className="border-green-800"
             />
           </View>
         </View>
